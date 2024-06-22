@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <stdlib.h>
+
 /**
  * main - Entry point
  *
@@ -7,12 +7,13 @@
  */
 int main(void)
 {
-int i = '0';
-while (i <= '9')
+char letter;
+
+for (letter = 'z'; letter >= 'a'; letter--)
 {
-putchar(i);
-i++;
+putchar(letter);
 }
 putchar('\n');
+
 return (0);
 }
