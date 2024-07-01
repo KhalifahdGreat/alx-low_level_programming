@@ -16,15 +16,13 @@ int main(void)
 
     srand(time(NULL));
 
-    while (sum < 2772)
+    while (sum < 2772 - 126) // 126 is the highest ASCII value that can be used to avoid exceeding the sum
     {
-        c = rand() % 128; // Generate random character
-        if ((sum + c) > 2772) // Ensure sum doesn't exceed 2772
-            break;
+        c = rand() % 94 + 33; // Generate a random character from '!' to '~'
         sum += c;
         password[i++] = c;
     }
-    password[i++] = 2772 - sum; // Add the final character to reach 2772
+    password[i++] = 2772 - sum; // Add the final character to reach exactly 2772
     password[i] = '\0'; // Null-terminate the string
 
     printf("%s", password);
